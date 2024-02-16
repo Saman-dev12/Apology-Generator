@@ -14,7 +14,3 @@ def generateApology():
     apologyType = request.form['apology']
     apology = generate_apology(apologyType)
     return render_template("apology.html", apology=apology)
-
-
-if __name__ == "__main__":
-    app.run(debug=False, host='0.0.0.0')

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apology</title>
+    <link rel="stylesheet" href="../static/css/output.css">
+    <style>
+        .top-left {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        
+
+    </style>
+    <script>
+        function copyApology() {
+            /* Get the text content of the apology */
+            var apologyText = document.getElementById("apologyText").innerText;
+
+            navigator.clipboard.writeText(apologyText);
+
+            /* Alert the user that the text has been copied */
+            alert("Apology copied to clipboard!");
+        }
+
+        function navigateToHome() {
+            /* Navigate to the home page */
+            window.location.href = "/";
+        }
+    </script>
+</head>
+<body class="bg-gray-900 text-white">
+
+<button onclick="navigateToHome()" class="mt-4 bg-gray-900 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline top-left">Home</button>
+    <div class="flex justify-center items-center h-screen">
+        <div class="w-full md:w-2/3 lg:w-1/2 px-4 py-8 bg-gray-800 rounded-lg shadow-lg relative">
+            <h1 class="text-center text-3xl font-semibold mb-8">Here's Your Apology... 🙇‍♀️</h1>
+            <div class="border border-gray-700 rounded-md p-6 hover:bg-gray-700 transition duration-300">
+                <div class="text-base text-gray-300 leading-relaxed" id="divToCapture">
+                    <p id="apologyText" class="opacity-100 hover:opacity-90 transition duration-300"> {{ apology }} </p>
+                </div>
+                <button onclick="copyApology()" class="mt-4 bg-gray-900 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline">Copy Apology</button>
+                <!-- Add button to navigate to home page -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
